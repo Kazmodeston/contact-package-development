@@ -13,7 +13,8 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-6">
-                    <form action="" method="post">
+                    <form action="{{ route('contact') }}" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
@@ -24,7 +25,7 @@
 
                                 <div class="form-group">
                                     <label for="Email">Enter your Email</label>
-                                    <input type="email" class="form-control" name="name" id="email" value="{{ old('email') }}" required />
+                                    <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" required />
                                     <span class="text-danger">Email is required</span>
                                 </div>
 
@@ -48,6 +49,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
 </body>
 </html>
