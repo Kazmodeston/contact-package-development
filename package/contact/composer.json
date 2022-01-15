@@ -1,0 +1,19 @@
+{
+    "name": "skillshare/contact",
+    "description": "This is a package developed to handle Contact form as a module , which sends email to the admin as well save the message to database",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Skillshare\\Contact\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Muhammad Kazim",
+            "email": "kazmodeston1@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
