@@ -13,6 +13,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-6">
+                    @include('contact::flashMessage.flash-message')
                     <form action="{{ route('contact') }}" method="post">
                         @csrf
                         <div class="row">
@@ -20,22 +21,32 @@
                                 <div class="form-group">
                                     <label for="Name">Enter your Name</label>
                                     <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}" required />
-                                    <span class="text-danger">Name is required</span>
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    
                                 </div>
 
                                 <div class="form-group">
                                     <label for="Email">Enter your Email</label>
                                     <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" required />
-                                    <span class="text-danger">Email is required</span>
+                                    @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    
                                 </div>
 
                                 <div class="form-group">
                                     <label for="Message">Enter your Message</label>
                                     <textarea name="message" style="resize: none;" class="form-control" id="message" cols="30" rows="10">{{ old('message') }}</textarea>
-                                    <span class="text-danger">Message is required</span>
+                                    @error('message')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    
                                 </div>
-
+                                <br />
                                 <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
                                     <input type="submit" value="Send Message" class="btn btn-primary" />
                                 </div>
 
