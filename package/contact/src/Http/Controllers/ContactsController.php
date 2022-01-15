@@ -4,6 +4,7 @@ namespace Skillshare\Contact\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Skillshare\Contact\Http\Requests\ContactRequest;
 
 class ContactsController extends Controller
 {
@@ -12,8 +13,8 @@ class ContactsController extends Controller
         return view("contact::contact");
     }
 
-    public function sendMessage(Request $request)
+    public function sendMessage(ContactRequest $request)
     {
-        return $request->all();
+        
     }
 }
